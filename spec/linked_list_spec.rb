@@ -9,18 +9,25 @@ RSpec.describe Node do
     it 'exists' do
       expect(list).to be_an_instance_of(LinkedList)
     end
-
+    
     it 'has attributes' do
       expect(list.head).to eq(nil)
     end
   end
-
+  
   describe "#append" do
-    it 'can add a node to the list' do
-      list.append("doop")
-
+  it 'can add a node to the list' do
+    list.append("doop")
+    
       expect(list.head.data).to eq("doop")
     end
+
+    it 'can add multiple nodes to the list' do
+      list.append("doop")
+      list.append("deep")
+
+      expect(list.head.next_node.data).to eq("deep")
+    end 
   end
 
   describe '#count' do

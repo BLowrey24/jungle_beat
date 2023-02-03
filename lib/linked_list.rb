@@ -7,17 +7,16 @@ class LinkedList
 
   def append(data)
     node = Node.new(data)
-
+# require 'pry'; binding.pry
     if head.nil? 
       @head = node
     else
-      current_node = @head
+      current_node = head
         until current_node.next_node.nil?
           current_node = current_node.next_node
         end
       current_node.next_node = node
     end
-
 
     data
   end
