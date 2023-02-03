@@ -74,7 +74,7 @@ RSpec.describe Node do
       list.prepend("dop")
       list.insert(1, "woo")
 
-      expect(list.to_string).to eq("dop woo suu plop")
+      expect(list.to_string).to eq("dop woo plop suu")
     end
   end
 end

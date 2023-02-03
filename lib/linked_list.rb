@@ -47,9 +47,27 @@ class LinkedList
 
   def prepend(data)
     new_node = Node.new(data)
-    new_node.next_node = @head
-    
+    new_node.next_node = head
+
     @head = new_node
+
+    data
+  end
+
+  def insert(index, data)
+    current_node = head
+    new_node = Node.new(data)
+
+    if index == 0
+      new_node.next_node = head
+      head = new_node
+    else
+      (index - 1).times do
+        current_node = current_node.next_node
+      end
+      new_node.next_node = current_node.next_node
+      current_node.next_node = new_node
+    end
 
     data
   end
