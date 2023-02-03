@@ -35,6 +35,10 @@ RSpec.describe Node do
       list.append("doop")
 
       expect(list.count).to eq(1)
+
+      list.append("deep")
+      
+      expect(list.count).to eq(2)
     end
   end
 
