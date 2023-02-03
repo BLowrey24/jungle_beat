@@ -11,8 +11,13 @@ class LinkedList
     if head.nil? 
       @head = node
     else
-      tail.next_node = node
+      current_node = @head
+        until current_node.next_node.nil?
+          current_node = current_node.next_node
+        end
+      current_node.next_node = node
     end
+
 
     data
   end
@@ -27,5 +32,17 @@ class LinkedList
     end
 
     counter
+  end
+
+  def to_string
+    current_node = head
+    result = ""
+
+    until current_node.nil?
+      result += current_node.data + " "
+      current_node = current_node.next_node
+    end
+
+    result.strip
   end
 end
