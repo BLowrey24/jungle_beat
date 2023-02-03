@@ -14,4 +14,12 @@ RSpec.describe Node do
       expect(list.head).to eq(nil)
     end
   end
+
+  describe "#append" do
+    it 'can add a node to the list' do
+      list.append("doop")
+
+      expect(list.head.data).to eq("doop")
+    end
+  end
 end
