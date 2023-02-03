@@ -66,4 +66,15 @@ RSpec.describe Node do
       expect(list.to_string).to eq("dop plop suu")
     end
   end
+
+  describe '#insert' do
+    it 'can insert a node into a specific index point on the list' do
+      list.append("plop")
+      list.append("suu")
+      list.prepend("dop")
+      list.insert(1, "woo")
+
+      expect(list.to_string).to eq("dop woo suu plop")
+    end
+  end
 end
