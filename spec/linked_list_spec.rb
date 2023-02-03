@@ -37,7 +37,7 @@ RSpec.describe Node do
       expect(list.count).to eq(1)
 
       list.append("deep")
-      
+
       expect(list.count).to eq(2)
     end
   end
@@ -47,6 +47,13 @@ RSpec.describe Node do
       list.append("doop")
 
       expect(list.to_string).to eq("doop")
+    end
+
+    it 'returns a string of multiple nodes together' do
+      list.append("doop")
+      list.append("deep")
+
+      expect(list.to_string).to eq("doop deep")
     end
   end
 end
