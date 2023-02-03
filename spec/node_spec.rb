@@ -1,9 +1,9 @@
 require "./lib/node"
 
-RSpec.decribe Node do
-  let(:node) { Node.new("plop")}
-  
-  decribe "#initialize" do
+RSpec.describe Node do
+  let(:node) { Node.new("plop") }
+
+  describe "#initialize" do
     it 'exists' do
       expect(node).to be_an_instance_of(Node)
     end
