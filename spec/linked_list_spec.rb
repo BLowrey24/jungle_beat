@@ -57,8 +57,8 @@ RSpec.describe Node do
     end
   end
 
-  describe '#' do 
-    it '' do
+  describe '#prepend' do 
+    it 'can add data to the front of the list' do
       list.append("plop")
       list.append("suu")
       list.prepend("dop")

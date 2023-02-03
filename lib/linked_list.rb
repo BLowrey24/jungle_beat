@@ -44,4 +44,13 @@ class LinkedList
 
     result.strip
   end
+
+  def prepend(data)
+    new_node = Node.new(data)
+    new_node.next_node = @head
+    
+    @head = new_node
+
+    data
+  end
 end
