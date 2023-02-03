@@ -22,4 +22,12 @@ RSpec.describe Node do
       expect(list.head.data).to eq("doop")
     end
   end
+
+  describe '#count' do
+    it 'returns the # of nodes in the list' do
+      list.append("doop")
+
+      expect(list.count).to eq(1)
+    end
+  end
 end
