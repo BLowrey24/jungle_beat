@@ -16,8 +16,8 @@ RSpec.describe Node do
   end
   
   describe "#append" do
-  it 'can add a node to the list' do
-    list.append("doop")
+    it 'can add a node to the list' do
+      list.append("doop")
     
       expect(list.head.data).to eq("doop")
     end
@@ -54,6 +54,16 @@ RSpec.describe Node do
       list.append("deep")
 
       expect(list.to_string).to eq("doop deep")
+    end
+  end
+
+  describe '#' do 
+    it '' do
+      list.append("plop")
+      list.append("suu")
+      list.prepend("dop")
+
+      expect(list.to_string).to eq("dop plop suu")
     end
   end
 end
