@@ -30,4 +30,12 @@ RSpec.describe Node do
       expect(list.count).to eq(1)
     end
   end
+
+  describe '#to_string' do
+    it 'returns a string ' do
+      list.append("doop")
+
+      expect(list.to_string).to eq("doop")
+    end
+  end
 end
