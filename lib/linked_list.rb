@@ -73,7 +73,7 @@ class LinkedList
   end
 
   def find(start, length)
-    current_node = @head
+    current_node = head
     result = ""
 
     start.times do
@@ -86,5 +86,14 @@ class LinkedList
     end
 
     result.strip
+  end
+
+  def includes?(data)
+    current_node = head
+  until current_node.nil?
+    return true if current_node.data == data
+    current_node = current_node.next_node
+  end
+  false
   end
 end
