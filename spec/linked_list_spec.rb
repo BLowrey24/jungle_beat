@@ -4,7 +4,7 @@ require "./lib/linked_list"
 RSpec.describe Node do
   let(:list) { LinkedList.new }
   let(:node) { Node.new("plop") }
-
+  
   describe "#initialize" do
     it 'exists' do
       expect(list).to be_an_instance_of(LinkedList)
@@ -75,6 +75,19 @@ RSpec.describe Node do
       list.insert(1, "woo")
 
       expect(list.to_string).to eq("dop woo plop suu")
+    end
+  end
+
+  describe '#find' do
+    it 'it can find a specific node in the list' do
+      list.append("deep")
+      list.append("woo")
+      list.append("shi")
+      list.append("shu")
+      list.append("blop")
+      
+      expect(list.find(2, 1)).to eq("shi")
+      expect(list.find(1,3)).to eq("woo shi shu")
     end
   end
 end

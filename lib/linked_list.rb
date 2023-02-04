@@ -7,7 +7,7 @@ class LinkedList
 
   def append(data)
     node = Node.new(data)
-# require 'pry'; binding.pry
+
     if head.nil? 
       @head = node
     else
