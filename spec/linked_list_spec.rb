@@ -93,4 +93,18 @@ RSpec.describe LinkedList do
       expect(list.find(1,3)).to eq("woo shi shu")
     end
   end
+
+  describe '#includes?' do
+    it 'returns true if the node is included' do
+      list.append("deep")
+
+      expect(list.includes?("deep")).to eq(true)
+    end
+
+    it 'returns false if the node is not included' do
+      list.append("deep")
+
+      expect(list.includes?("dep")).to eq(false)
+    end
+  end
 end
