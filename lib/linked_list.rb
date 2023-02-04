@@ -71,4 +71,20 @@ class LinkedList
 
     data
   end
+
+  def find(start, length)
+    current_node = @head
+    result = ""
+
+    start.times do
+      current_node = current_node.next_node
+    end
+
+    length.times do
+      result << current_node.data + " "
+      current_node = current_node.next_node
+    end
+
+    result.strip
+  end
 end

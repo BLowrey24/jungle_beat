@@ -1,7 +1,7 @@
 require "./lib/node"
 require "./lib/linked_list"
 
-RSpec.describe Node do
+RSpec.describe LinkedList do
   let(:list) { LinkedList.new }
   let(:node) { Node.new("plop") }
   
@@ -18,7 +18,7 @@ RSpec.describe Node do
   describe "#append" do
     it 'can add a node to the list' do
       list.append("doop")
-    
+  
       expect(list.head.data).to eq("doop")
     end
 
@@ -31,11 +31,14 @@ RSpec.describe Node do
   end
 
   describe '#count' do
-    it 'returns the # of nodes in the list' do
+    it 'returns the # of one node in the list' do
       list.append("doop")
 
       expect(list.count).to eq(1)
+    end
 
+    it 'returns the # of multiple nodes in the list' do
+      list.append("doop")
       list.append("deep")
 
       expect(list.count).to eq(2)
@@ -85,7 +88,7 @@ RSpec.describe Node do
       list.append("shi")
       list.append("shu")
       list.append("blop")
-      
+  
       expect(list.find(2, 1)).to eq("shi")
       expect(list.find(1,3)).to eq("woo shi shu")
     end
