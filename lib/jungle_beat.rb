@@ -12,4 +12,9 @@ class JungleBeat
   def count
     list.count
   end
+
+  def play
+    beats = self.list.to_string
+    system(`say -r 100 -v Samantha #{beats}`)
+  end
 end
