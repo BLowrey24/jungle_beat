@@ -33,4 +33,12 @@ RSpec.describe JungleBeat do
       expect(jb.count).to eq(6)
     end
   end
+
+  describe '#play' do
+    it 'uses the content of the junglebeat as input to the say' do
+      jb.append("deep doo ditt woo hoo shu")
+
+      jb.play
+    end
+  end
 end
