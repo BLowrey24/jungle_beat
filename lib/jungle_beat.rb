@@ -6,6 +6,10 @@ class JungleBeat
   end
 
   def append(data)
-    data.split(" ").each { |data| @list.append(data)}
+    data.split(" ").each { |data| list.append(data)}
+  end
+
+  def count
+    list.count
   end
 end
