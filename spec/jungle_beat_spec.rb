@@ -24,4 +24,13 @@ RSpec.describe JungleBeat do
       expect(jb.list.head.next_node.data).to eq("doo")
     end
   end
+
+  describe '#count' do
+    it 'returns the number of nodes in the list' do
+      jb.append("deep doo ditt")
+      jb.append("woo hoo shu")
+
+      expect(jb.count).to eq(6)
+    end
+  end
 end
