@@ -12,6 +12,7 @@ RSpec.describe JungleBeat do
 
     it 'has attributes' do
       expect(jb.list).to be_a(LinkedList)
+      expect(jb.list.head).to eq(nil)
     end
   end
 end
