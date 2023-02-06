@@ -94,7 +94,21 @@ class LinkedList
       return true if current_node.data == data
       current_node = current_node.next_node
     end
-    
+
     false
+  end
+
+  def pop
+    return nil if head.nil?
+    return head.data if head.next_node.nil?
+
+    current_node = head
+    until current_node.next_node.next_node.nil?
+      current_node = current_node.next_node
+    end
+
+    popped_node_data = current_node.next_node.data
+    current_node.next_node = nil
+    popped_node_data
   end
 end
